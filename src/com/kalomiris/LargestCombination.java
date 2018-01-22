@@ -1,5 +1,7 @@
 package com.kalomiris;
 
+import java.util.List;
+
 public class LargestCombination {
 
     public int compare(int a,int b){
@@ -17,4 +19,21 @@ public class LargestCombination {
             return 1;
         }
     }
+
+    public String sort(List<Integer> input) {
+        int temp;
+        for (int j = 1; j <= input.size()-1; j++) {
+            for (int i = 0; i < input.size()-j; i++) {
+                if (compare(input.get(i), input.get(i+1)) == 1) {
+                    temp = input.get(i);
+                    input.set(i,input.get(i+1));
+                    input.set(i+1,temp);
+                }
+            }
+        }
+        return input.toString();
+
+    }
+
+
 }
