@@ -22,6 +22,7 @@ public class LargestCombination {
 
     public String sort(List<Integer> input) {
         int temp;
+        String output = "";
         for (int j = 1; j <= input.size()-1; j++) {
             for (int i = 0; i < input.size()-j; i++) {
                 if (compare(input.get(i), input.get(i+1)) == 1) {
@@ -31,7 +32,12 @@ public class LargestCombination {
                 }
             }
         }
-        return input.toString();
+
+        for (Integer element:input){
+            output = output + element.toString();
+        }
+
+        return output;
 
     }
 
