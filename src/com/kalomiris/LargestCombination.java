@@ -3,14 +3,17 @@ package com.kalomiris;
 import java.util.List;
 
 public class LargestCombination {
-
+/*Input two integers from sort method.*/
+/*Convert them to string and compare their sum with inversion sum.*/
     public int compare(int a,int b){
         String strA = Integer.toString(a);
         String strB = Integer.toString(b);
 
         String sumA = strA + strB;
+        //Convert string to int for the comparison.
         int sumAA = Integer.parseInt(sumA);
         String sumB = strB + strA;
+        //Convert string to int for the comparison.
         int sumBB = Integer.parseInt(sumB);
 
         if(sumAA >= sumBB){
@@ -19,7 +22,7 @@ public class LargestCombination {
             return 1;
         }
     }
-
+/*Input a list of numbers and sort them with double loop.*/
     public String sort(List<Integer> input) {
         int temp;
         String output = "";
@@ -32,7 +35,7 @@ public class LargestCombination {
                 }
             }
         }
-
+        /* the final conversion, int to string. */
         for (Integer element:input){
             output = output + element.toString();
         }
